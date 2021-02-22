@@ -1,0 +1,22 @@
+clear
+load('PD_SNR_final.mat');
+load('MLWDF_SNR_final.mat');
+user_set=8:8:72;
+PD_throughput1=[1.3152 2.3776 3.1913	3.4383	3.5861	3.7603	3.8541 3.9212 4.0157];
+MLWDF_throughput1=[1.2943 2.3470 2.9994 3.2528 3.3759 3.4810 3.5083 3.5277 3.5324];
+figure('name','System throughput');
+plot(user_set,PD_throughput1,'k^--');
+hold on;
+plot(user_set,MLWDF_throughput1,'ro-');
+xlabel('The number of users');
+ylabel('System throughput (bps/Hz)');
+legend('PD','M-LWDF','location','NorthWest');
+grid on;
+figure('name','System throughput-SNR');
+plot(Eb_N0_dB,PD_throughput,'k^--');
+hold on;
+plot(Eb_N0_dB,MLWDF_throughput,'ro-');
+xlabel('SNR (dB)');
+ylabel('System throughput (bps/Hz)');
+legend('PD','M-LWDF','location','NorthWest');
+grid on;

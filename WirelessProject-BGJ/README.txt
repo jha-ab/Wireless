@@ -1,0 +1,1 @@
+Just need to run the main.m file directly in MATLAB. Note that the project runs for a long time.
